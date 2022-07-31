@@ -1,0 +1,744 @@
+/* Reset CSS 
+ * - de pe http://meyerweb.com/eric/tools/css/reset/ 
+ * - pastram doar ce folosim */
+
+html, body, div, span, iframe,
+h1, h2, h3, h4, h5, h6, p, a, 
+small, strike, strong, b, i,
+ul, li, form, label, article, aside,
+figure, figcaption, footer, header,
+nav, section, video
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  vertical-align: baseline
+
+/* HTML5 display-role reset for older browsers */
+footer, header, nav, section
+  display: block
+
+body
+  line-height: 1
+
+ul
+  list-style: none
+
+/* Sfarsit Reset */
+
+*
+  box-sizing: border-box
+
+
+:root
+  font-family: 'Poppins', Inter, Avenir, Helvetica, Arial, sans-serif
+  font-size: 16px
+  line-height: 24px
+  font-weight: 400
+  color: rgba(255, 255, 255, 0.87)
+  font-synthesis: none
+  scroll-behavior: smooth
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialised
+  -moz-osx-font-smoothing: grayscale
+  -webkit-text-size-adjust: 100%
+  --color-yellow: #fbbd4e
+  --color-black: #242424
+  --color-purple: #3f3d56
+  --color-dark-purple: #2a293b
+  --color-primary: #00bcd4
+  --color-dark-white: #d0cde1
+  --color-secondary: #d0cde199
+
+body
+  min-width: 320px
+  min-height: 100vh
+  background-color: var(--color-black)
+
+img
+  max-width: 100%
+
+/* Tipografie */
+h1, h2, h3
+  font-weight: 600
+
+h1
+  font-size: 3rem
+  line-height: 1.1
+  margin-bottom: 1.5rem
+
+h2
+  font-size: 2rem
+
+h3
+  font-size: 1.25rem
+  margin-bottom: 1.5rem
+
+h4, p
+  font-size: 1rem
+  margin-bottom: 1rem
+  line-height: 1.5
+
+a
+  font-weight: 500
+  color: var(--color-dark-white)
+  text-decoration: none
+  letter-spacing: 1px
+
+a:hover
+  color: white
+
+/* Utile */
+.container
+  width: 100%
+  max-width: 1280px
+  margin: 0 auto
+  padding-left: 1.5rem
+  padding-right: 1.5rem
+
+.text-center
+  text-align: center
+
+.margin-auto
+  margin: auto
+
+.mx-auto
+  margin-left: auto
+  margin-right: auto
+
+.my-auto
+  margin-top: auto
+  margin-bottom: auto
+
+.ml-auto
+  margin-left: auto
+
+.mb-1
+  margin-bottom: 1rem
+
+.mb-2
+  margin-bottom: 2rem
+
+.mb-3
+  margin-bottom: 3rem
+
+.mt-1
+  margin-top: 1rem
+
+.mt-2
+  margin-top: 2rem
+
+.mt-3
+  margin-top: 3rem
+
+
+.absolute
+  position: absolute
+
+
+.relative
+  position: relative
+
+
+.bottom-0
+  bottom: 0
+
+
+.index-0
+  z-index: 0
+
+
+.index-1
+  z-index: 1
+
+
+.-index-1
+  z-index: -1
+
+
+.flex
+  display: flex
+
+
+.flex.col
+  flex-direction: column
+
+
+.wrap
+  flex-wrap: wrap
+
+
+.items-center
+  align-items: center
+
+
+.content-center
+  justify-content: center
+
+
+.space-between
+  justify-content: space-between
+
+
+.grid
+  display: grid
+
+
+.gap-1
+  gap: 1rem
+
+
+.gap-2
+  gap: 2rem
+
+
+.gap-3
+  gap: 3rem
+
+
+.gap-4
+  gap: 4rem
+
+
+.gap-5
+  gap: 5rem
+
+
+.gap-6
+  gap: 6rem
+
+
+
+/* Logo */
+.logo
+  display: flex
+  padding: 0.5rem
+  font-size: 1.6rem
+  font-weight: 500
+  will-change: filter
+
+
+.logo:hover
+  filter: drop-shadow(0 0 1.5rem var(--color-purple))
+
+
+button
+  border: 2px solid transparent
+  padding: 0.5rem 1rem
+  font-size: inherit
+  font-weight: 500
+  font-family: inherit
+  background-color: transparent
+  cursor: pointer
+
+
+.btn
+  display: inline-block
+  background-color: var(--color-black)
+  border: 2px solid transparent
+  outline: 0
+  border-radius: .5rem
+  padding: 0.5rem 1rem
+  font-size: inherit
+  font-weight: 600
+  font-family: inherit
+  cursor: pointer
+  color: white
+  transition: all .3s
+  letter-spacing: 1px
+
+.btn--sm
+  padding: 0 1rem
+
+.btn--lg
+  padding: 1rem 3rem
+  letter-spacing: 2px
+
+.btn--rounded
+  border-radius: 3rem
+
+.btn--inversat
+  color: var(--color-black)
+  background-color: white
+
+
+.btn--inversat:hover
+  color: white
+  background-color: transparent
+  border-color: white
+
+.btn--primary
+  color: var(--color-black)
+  border-color: var(--color-primary)
+  background-color: var(--color-primary)
+
+.btn--primary:hover
+  color: var(--color-primary)
+  background-color: transparent
+
+/* Header / Nav */
+.header
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  z-index: 999
+  padding: 2rem 0
+  transition: all 0.5s
+
+.header--scrolled
+  padding: 1rem 0
+  background-color: var(--color-black)
+  box-shadow: 0 2px 20px -16px rgb(0 0 0 / 50%)
+
+.nav--main
+  display: none
+
+.nav ul
+  margin: 0
+  padding: 0
+  list-style: none
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  justify-content: center
+  gap: 1rem
+
+body.has-mobile-nav
+  overflow: hidden
+
+  .nav--main
+    display: flex
+    position: fixed
+    z-index: -1
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    backdrop-filter: blur(1rem)
+    background-color: #242424c7
+
+    ul
+      width: 100%
+      flex-direction: column
+
+.nav-link
+  position: relative
+  display: block
+  padding: 1rem 0
+
+.nav-link.active
+  color: var(--color-primary)
+
+.underline
+  width: 0
+  height: 2px
+  background-color: white
+  position: absolute
+  left: 0
+  bottom: 0
+  border-radius: 1rem
+  opacity: 0
+  visibility: hidden
+  transition: all .3s ease-out 0s
+
+.underline::before,
+.underline::after
+  content: ''
+  position: absolute
+  width: 0
+  height: 2px
+  background-color: white
+
+
+.underline::before
+  left: 110%
+
+
+.underline::after
+  left: 140%
+
+.line
+  display: inline-block
+  width: 120px
+  padding-top: 2rem
+  margin-bottom: 2rem
+  position: relative
+
+.line .underline,
+.nav-link.active .underline,
+.nav-link:hover .underline
+  opacity: 1
+  visibility: visible
+  width: 60%
+
+
+.line .underline::before,
+.nav-link.active .underline::before,
+.nav-link:hover .underline::before
+  width: 20%
+
+
+.line .underline::after,
+.nav-link.active .underline::after,
+.nav-link:hover .underline::after
+  width: 10%
+
+
+/* Hamburger - button meniu */
+.hamburger
+  padding: 0
+
+
+.hamburger .hamburger-slice
+  width: 30px
+  height: 2px
+  display: block
+  margin: 5px 0
+  position: relative
+  background-color: white
+  transition: all 0.3s ease-out 0s
+
+body.has-mobile-nav
+  .hamburger .hamburger-slice:nth-of-type(1)
+    top: 7px
+    transform: rotate(45deg)
+
+
+  .hamburger .hamburger-slice:nth-of-type(2)
+    opacity: 0
+
+
+  .hamburger .hamburger-slice:nth-of-type(3)
+    top: -7px
+    transform: rotate(135deg)
+
+
+/* Main CSS */
+main
+  min-height: 100vh
+  padding-top: 8rem
+
+
+/* Sectiuni */
+section
+  padding: 6rem 0 3rem
+  min-height: 100vh
+  position: relative
+  display: flex
+
+section svg
+  position: absolute
+  bottom: 0
+  color: var(--color-dark-purple)
+
+section:nth-child(2n) 
+  background-color: var(--color-dark-purple)
+
+section:nth-child(2n) svg
+  color: var(--color-black)
+
+
+/* Hero */
+.hero
+  display: flex
+  justify-content: center
+  padding-top: 9rem
+  background-image: url(~/assets/img/illustrations/laravel_and_vue.svg)
+  background-repeat: no-repeat
+  background-size: 50vh
+  background-position: 50% 100%
+
+.hero .container
+  margin-top: 10vh
+
+/* Despre Mine */
+.shaped
+  display: none
+
+
+.skills
+  margin-top: 2rem
+
+.skill
+  margin-bottom: 1rem
+
+.skill-title
+  margin-bottom: 1rem
+
+.skill-progress
+  width: 100%
+  position: relative
+  height: .75rem
+  border-radius: 1rem
+  background-color: var(--color-purple)
+
+.skill-progress::before
+  content: ''
+  position: absolute
+  left: 0
+  top: 0
+  bottom: 0
+  background-color: var(--color-primary)
+  border-radius: 1rem 0 0 1rem
+  transition: all .3s
+
+.skill-progress--70::before
+  right: 30%
+
+.skill-progress--75::before
+  right: 25%
+
+.skill-progress--85::before
+  right: 15%
+
+.skill-progress--90::before
+  right: 10%
+
+/* Servicii */
+.services
+  margin-top: 3rem
+
+.service
+  background: var(--color-purple)
+  padding: 2rem
+  border-radius: 1rem
+
+.service-icon
+  width: 60px
+  height: 60px
+  background-image: url(~/assets/img/icons/design.png)
+  background-repeat: no-repeat
+  background-size: 50%
+  background-color: #cfcfcf
+  border-radius: 25% 35% 0 35%
+  background-position: 50%
+
+.service-title
+  margin-left: 1.5rem
+
+.service-description
+  margin-top: 1.5rem
+
+/* Portofoliu */
+.project
+  margin-top: 3rem
+  margin-bottom: 3rem
+
+.project
+  background: radial-gradient(#ffeb3b1a, transparent)
+  border-radius: 40px
+  overflow: hidden
+  max-width: 500px
+  margin: auto
+
+.project-title
+  margin-top: 1.5rem
+  padding-left: 1.5rem
+
+.project-description
+  padding-left: 1.5rem
+  margin-bottom: 1.5rem
+  font-weight: 300
+  opacity: 0.7
+
+/* Recomandari */
+.testimonial
+  text-align: left
+
+
+.testimonial-avatar
+  max-width: 180px
+  border-radius: 50px 0
+  overflow: hidden
+  margin-left: auto
+  margin-right: auto
+
+.testimonial-content
+  flex: 1
+  padding-left: 30px
+  position: relative
+
+.testimonial-author
+  font-size: 1.25rem
+  font-weight: 600
+
+.testimonial-title
+  color: var(--color-secondary)
+  margin-bottom: 1rem
+
+.testimonial p
+  font-size: 1rem
+  font-weight: 300
+
+.testimonial-review li
+  display: inline-block
+  font-size: 14px
+  color: #ffae34
+  margin: 0 2px
+
+.star
+  display: block
+  width: 20px
+  height: 20px
+  background: url(~/assets/img/icons/star.svg)
+
+.star.filled
+  background: url(~/assets/img/icons/star-filled.svg)
+
+@media screen and (max-width: 1023px)
+  .nav--main ul > li:last-child
+    padding-top: 1rem
+  
+
+
+@media screen and (max-width: 479px)
+  .testimonial
+    flex-direction: column
+    text-align: center
+
+  .testimonial-content
+    margin-top: 1.5rem
+    padding-left: 0
+  
+
+/* Experienta */
+.exp-row
+  position: relative
+  counter-increment: rowIndex
+  margin-bottom: 3rem
+
+.exp-row::after
+  content: counter(rowIndex)
+  color: var(--color-primary)
+  width: 3rem
+  height: 3rem
+  position: absolute
+  background-color: var(--color-dark-purple)
+  border: 2px solid var(--color-primary)
+  border-radius: 50%
+  text-align: center
+  line-height: 3rem
+  font-weight: 600
+  left: 0
+  top: 2.5rem
+
+.exp-description
+  padding: 1.5rem
+  border-radius: 0.5rem
+  background-color: var(--color-purple)
+  text-align: justify
+
+.exp-description p
+  margin: 0
+
+.exp-info
+  padding-left: 4rem
+  text-align: left
+
+.exp-info h3
+  line-height: 1.5
+
+.exp-info h4
+  color: var(--color-primary)
+
+/* Contact */
+input, textarea
+  appearance: none
+  border: 2px solid transparent
+  box-shadow: none
+  background-color: var(--color-purple)
+  font-size: 1.2rem
+  width: 100%
+  padding: 1rem
+  border-radius: 0.5rem
+  transition: all 0.2s
+  color: var(--color-dark-white)
+  outline: none
+
+textarea
+  resize: none
+
+input:focus, textarea:focus
+  color: var(--color-white)
+  border-color: var(--color-primary)
+
+input::placeholder, textarea::placeholder
+  color: var(--color-secondary)
+
+/* Footer */
+.footer
+  padding: 3rem 0
+  background-color: var(--color-dark-purple)
+
+.nav--footer,
+.nav--social
+  margin-bottom: 2rem
+
+
+.link-social svg
+  padding: .5rem
+  border-radius: 25%
+  transition: all .3s
+
+
+.link-social:hover svg
+  transform: scale(1.1) rotate(3deg)
+
+
+.link-social--fb:hover svg
+  color: #4267B2
+
+.link-social--in:hover svg
+  color: #C13584
+
+.link-social--tw:hover svg
+  color: #1DA1F2
+
+.link-social--ln:hover svg
+  color: #0077b5
+
+.link-social--gh:hover svg
+  color: #6e5494
+
+.link-social--yt:hover svg
+  color: #FF0000
+
+
+.copy
+  font-size: .8rem
+  font-weight: 300
+  text-align: center
+  color: var(--color-secondary)
+
+
+/*  Back to top */
+.back-to-top
+  position: fixed
+  width: 50px
+  height: 50px
+  background-color: var(--color-black)
+  border-radius: 50% 50% 0 50%
+  right: 1rem
+  bottom: 1rem
+  transition: all 1s
+  transform: scale(0)
+  opacity: 0
+  z-index: 9
+
+
+.back-to-top svg
+  width: 20px
+  height: 20px
+
+
+.back-to-top.active
+  transform: scale(1)
+  opacity: 0.75
+
+
+.back-to-top:hover
+  opacity: 1
+  transform: scale(1.1)
+
