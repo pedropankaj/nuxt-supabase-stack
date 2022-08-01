@@ -1,9 +1,11 @@
 <script setup>
-import DataForm from '~~/components/ui/DataForm.vue'
+import { useToast } from 'vue-toastification'
+import DataForm from '~/components/ui/DataForm.vue'
 
 const client = useSupabaseClient()
+const loading = ref(false)
 
-const { data } = await useAsyncData('contact_emails', async () => {
+const { data, refresh } = await useAsyncData('contact_emails', async () => {
   const { data } = await client.from('contact_emails').select('id, nume, email, mesaj')
   return data
 })
@@ -14,27 +16,25 @@ const stergeNotificare = ({ id }) => {
 
 const draft = ref(null)
 
-
 function edit(item) {
   draft.value = item
 }
 
-function update(item) {
-  console.log('update', item)
-  const index = data.findIndex(i => i.id === item.id)
-  data[index] = { ...data[index], ...item }
-}
-
 async function remove(item) {
+  const toast = useToast()
+  loading.value = true
   try {
     const res = await stergeNotificare(item)
     if (res.status === 200) {
-      alert('Notificare a fost stearsa.')
+      refresh()
+      toast('Notificarea a fost stearsa!')
     }
   } catch (error) {
-    console.log('Eroare la stergere. ', error.message)
+    toast.error(error.message)
+  } finally {
+    loading.value = false
   }
-} 
+}
 
 </script>
 
@@ -60,16 +60,17 @@ async function remove(item) {
           <td>{{ item.mesaj }}</td>
           <td>
             <button class="btn btn--sm mr-1" @click="edit(item)">Edit</button>
-            <button class="btn btn--sm btn--danger" @click="remove(item)">Sterge</button>
+            <button class="btn btn--sm btn--danger" :disabled="loading" @click="remove(item)">{{ loading ? 'Se sterge...' : 'Sterge' }}</button>
           </td>
         </tr>
       </tbody>
     </table>
 
-    <div v-if="draft">
-      <DataForm :draft="draft" @updateItem="update" /> 
-    </div>
-
+    <Transition name="bounce">
+      <div v-if="draft">
+        <DataForm :draft="draft" @update="refresh" @cancel="draft = null" /> 
+      </div>
+    </Transition>
 
   </div>
 </template>

@@ -35,6 +35,8 @@ export default defineNuxtConfig({
     },
   },
 
+  // component: true,
+
   modules: ['@nuxtjs/supabase'],
 
   css: [
@@ -42,7 +44,7 @@ export default defineNuxtConfig({
     '~/assets/css/tablet.sass',
     '~/assets/css/laptop.sass',
     '~/assets/css/desktop.sass',
+    'vue-toastification/dist/index.css',
   ],
-
 
 })
