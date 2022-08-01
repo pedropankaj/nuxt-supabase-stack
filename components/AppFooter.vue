@@ -149,6 +149,13 @@ import UiBackToTopBtn from '~/components/ui/UiBackToTopBtn.vue'
         </nav>
       </div>
 
+      <div class="flex mb-2">
+        <div class="copy mx-auto">
+          <nuxt-link to="/privacy">Privacy</nuxt-link>
+          <nuxt-link to="/termeni-si-conditii" class="ml-1">Termeni & Conditii</nuxt-link>
+        </div>
+      </div>
+
       <div class="flex">
         <p class="copy mx-auto">Liviu.dev &copy; {{ new Date().getFullYear() }} 🟡 Toate drepturile rezevate.</p>
       </div>

@@ -1,9 +1,9 @@
 <script setup>
 import { reactive, ref } from 'vue'
+import { useToast } from 'vue-toastification'
 import UiBtn from '../ui/UiBtn.vue'
 
 const loading = ref(false)
-const res = ref(null)
 
 const formData = reactive({
   nume: '',
@@ -13,10 +13,12 @@ const formData = reactive({
 
 async function trimiteFormular() {
   loading.value = true
+  const toast = useToast()
   try {
-    res.value = await $fetch('/api/contact', { method: 'post', body: formData })
+    await $fetch('/api/contact', { method: 'post', body: formData })
+    toast('Multumesc de mesaj! Vei primi un email in cateva ore / zile.')
   } catch (err) {
-    res.value = { success: false, error: err.message }
+    toast.error('Ne cerem scuze, dar nu am putut trimite mesajul dvs pt moment.')
   } finally {
     loading.value = false
   }
@@ -31,12 +33,6 @@ async function trimiteFormular() {
       <div class="line"><span class="underline"></span></div>
       <p>Aveți un proiect la care putem lucra împreună?</p>
       <p>Mi-ar plăcea să lucrez cu tine. Completează formularul de mai jos si spune-mi spune mai multe.</p>
-      
-      <div v-if="res">
-        <h3 v-if="res.success">Super, mesajul a fost trimis cu succes.</h3>
-        <h3 v-else-if="res.error" >{{ res.error }}</h3>
-        <h3 v-else>Ne cerem scuze, dar nu am putut trimite mesajul dvs pt moment.</h3>
-      </div>
       
       <form class="form form--contact flex col mt-3" @submit.prevent="trimiteFormular">
         <div class="grid cols-2 gap-2 mb-2">
