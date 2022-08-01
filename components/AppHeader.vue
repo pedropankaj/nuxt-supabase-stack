@@ -47,11 +47,8 @@ function onNavLinkClick(e) {
   }
 
   if (router.currentRoute.value.path !== '/') {
-    console.log('mergi catre index')
-
     setTimeout(() => {
       router.push('/')
-
       setTimeout(() => {
         let hash = e.target.attributes.href.value
         const hashSection = document.querySelector(hash)
@@ -60,7 +57,6 @@ function onNavLinkClick(e) {
         }
       }, 60)
     }, 0)
-
   }
 }
 </script>
